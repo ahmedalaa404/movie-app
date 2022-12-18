@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="row g-5">
+        <div class="col-lg-4" *ngFor="let trendingmovie of trendingmovies">
+            <img [src]="trendingmovie.poster_path|prefixImg" alt="" class="w-100">
+            <h3 class="text-center my-1">{{trendingmovie.title}}</h3>
+            <div class="my-4">
+                <p class="text-muted">{{trendingmovie.overview|seemore:10}}</p>
+            </div>
+        </div>
+    </div>
+</div>

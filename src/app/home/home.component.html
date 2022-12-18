@@ -1,0 +1,77 @@
+<div class="w-100 py-5">
+    <owl-carousel-o [options]="customOptions">
+  
+      <ng-container *ngFor="let slide of trendingmovies">
+        <ng-template carouselSlide [id]="slide.id">
+          <img [src]="slide.poster_path|prefixImg" alt="slide.alt" [title]="slide.title" class="px-2">
+        </ng-template>
+      </ng-container>
+  
+    </owl-carousel-o>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div>
+                <div class="brdr w-25 mb-4"></div>
+                <h2>Trending <br>movies <br> To watch Right Now</h2>
+                <p class="text-muted">most Watched movies by day</p>
+            <div class="brdr w-100 mb-4"></div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-2 text-center" *ngFor="let item of trendingmovies">
+            <a [routerLink]="['/movie-detalis',item.id]">
+                <img [src]="item.poster_path|prefixImg" alt="" class='w-100'> 
+                <h3 class="h6 my-3">{{item.title}}</h3>
+            </a>
+       </div>
+
+
+
+
+       <div class="col-lg-4 py-5 d-flex align-items-center">
+        <div>
+            <div class="brdr w-25 mb-4"></div>
+            <h2>Trending <br>Tv <br> To watch Right Now</h2>
+            <p class="text-muted">most Watched movies by day</p>
+        <div class="brdr w-100 mb-4"></div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-2 pt-5" *ngFor="let item of trendingTv text-center">
+        <img [src]="item.poster_path|prefixImg" alt="" class='w-100'> 
+        <h3 class="h6 my-3">{{item.title}}</h3>
+   </div>
+
+
+
+
+   <div class="col-lg-4 py-5 d-flex align-items-center">
+    <div>
+        <div class="brdr w-25 mb-4"></div>
+        <h2>Trending <br>People <br> To watch Right Now</h2>
+        <p class="text-muted">most Watched movies by day</p>
+    <div class="brdr w-100 mb-4"></div>
+    </div>
+
+</div>
+
+<div class="col-lg-2 pt-5 text-center" *ngFor="let item of trendingPeople">
+    <img [src]="item.profile_path|prefixImg" alt="" class='w-100'> 
+    <h3 class="h6 my-3">{{item.name}}</h3>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+</div>

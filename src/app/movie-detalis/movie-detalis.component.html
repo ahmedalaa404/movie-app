@@ -1,0 +1,20 @@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <img [src]="baseUrl+movDetails?.poster_path" alt="" class="w-100"> 
+            </div>
+            <div class="col-lg-8">
+                <h3 class="my-2 h1">{{movDetails?.title}}</h3>
+                <p class="text-muted text-center">{{movDetails?.overview|seemore:20}}</p>
+
+                <div class="my-5">
+                    <p class=""><span class="text-muted mx-2">vote_average : </span>  {{movDetails?.vote_average}}</p>
+                    <p class=""><span class="text-muted mx-2">vote_count : </span> {{movDetails?.vote_count}}</p>
+                    <p class=""><span class="text-muted mx-2">popularity : </span> {{movDetails?.popularity}}</p>
+                    <p class=""><span class="text-muted mx-2">release_date : </span> {{movDetails?.release_date}}</p>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>

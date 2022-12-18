@@ -1,0 +1,63 @@
+<h3>Register Form</h3>
+
+<!-- <h3></h3> -->
+<h6 class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</h6>
+<div>
+    <form action="" [formGroup]="registerForm" (submit)="  registeration()">
+        <label for="First_Name" >First Name :</label>
+        <input type="text" formControlName="first_name" id="First_Name"  class="form-control my-3">
+        <div *ngIf="registerForm.controls['first_name'].touched &&registerForm.controls['first_name'].invalid">
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['first_name'].errors?.['required']">this Inputs Is Require</p>
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['first_name'].errors?.['minlength']">Words must be greater than 2</p>
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['first_name'].errors?.['maxlength']">Words must be less than 10</p>
+        </div>
+
+
+
+        <label for="last_Name" >last Name :</label>
+        <input type="text" formControlName="last_name" id="last_Name"  class="form-control my-3">
+        <div *ngIf="registerForm.controls['last_name'].touched &&registerForm.controls['last_name'].invalid">
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['last_name'].errors?.['required']">this Inputs Is Require</p>
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['last_name'].errors?.['minlength']">Words must be greater than 2</p>
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['last_name'].errors?.['maxlength']">Words must be less than 10</p>
+        </div>
+
+
+        <label for="age" >age :</label>
+        <input type="text" formControlName="age" id="age"  class="form-control my-3">
+        <div *ngIf="registerForm.controls['age'].touched &&registerForm.controls['age'].invalid">
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['age'].errors?.['required']">this Inputs Is Require</p>
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['age'].errors?.['min']">must be greater than 10</p>
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['age'].errors?.['max']"> must be less than 30</p>
+        </div>
+
+
+        <label for="email" >Email:</label>
+        <input type="email" formControlName="email" id="email"  class="form-control my-3">
+        <div *ngIf="registerForm.controls['email'].touched &&registerForm.controls['email'].invalid">
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['email'].errors?.['required']">this Inputs Is Require</p>
+        </div>
+
+
+        <label for="password" >password :</label>
+        <input type="password" formControlName="password" id="password"  class="form-control my-3">
+        <div *ngIf="registerForm.controls['password'].touched &&registerForm.controls['password'].invalid">
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['password'].errors?.['required']">this Inputs Is Require</p>
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['password'].errors?.['minlength']">Words must be greater than 3</p>
+            <p class="alert alert-danger" *ngIf="this.registerForm.controls['password'].errors?.['maxlength']">Words must be less than 10</p>
+        </div>
+
+        <button class="btn"  [ngClass]="registerForm.valid?'btn-success':'btn-danger'" [disabled]="!registerForm.valid">
+            <span *ngIf="!isLoading">submit</span>
+            <span *ngIf="isLoading"><i class="fa-solid fa-spinner"></i></span>
+
+        </button>
+    </form>
+</div>
+
+<!-- 
+
+    status
+: 
+"INVALID"
+ -->

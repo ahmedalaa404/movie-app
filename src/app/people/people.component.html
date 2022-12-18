@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="row g-5">
+        <div class="col-lg-4" *ngFor="let trendingmovie of trendingmovies">
+            <img [src]="trendingmovie.profile_path|prefixImg" alt="" class="w-100">
+            <h3 class="text-center my-1">{{trendingmovie.original_name}}</h3>
+            <div class="my-1 text-center">
+                <p class="text-muted"><span class="text-primary">Actor specialty</span> {{trendingmovie.known_for_department}}</p>
+            </div>
+        </div>
+    </div>
+</div>
